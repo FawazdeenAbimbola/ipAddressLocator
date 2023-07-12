@@ -15,7 +15,7 @@ The IP Address Locator Web App is a simple and user-friendly tool that provides 
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js
+- **Backend**: Node.js, Express.js, Npm
 - **Geolocation API**: You will need to integrate a geolocation API service to fetch the IP address details.
 
 ## Usage
