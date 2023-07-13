@@ -40,6 +40,7 @@ app.post('/result.ejs', (req, res) => {
             const ipAddress = result.ip;
             const version  = result.version;
             const city = result.city;
+            const region = result.region;
             const regionCode = result.region_code;
             const countryCode = result.country_code;
             const countryName = result.country_name;
@@ -55,6 +56,7 @@ app.post('/result.ejs', (req, res) => {
                     ipAddress: 'IP address not valid',
                     version: 'N/A',
                     city: 'N/A',
+                    region: 'N/A',
                     regionCode: 'N/A',
                     countryCode: 'N/A',
                     countryName: 'N/A',
@@ -70,6 +72,7 @@ app.post('/result.ejs', (req, res) => {
                         ipAddress: ipAddress,
                         version: version,
                         city: city,
+                        region:  region,
                         regionCode: regionCode,
                         countryCode: countryCode,
                         countryName: countryName,
