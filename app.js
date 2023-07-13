@@ -13,21 +13,28 @@ app.use(express.static('./public/'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
-app.get('/index.html', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
-app.post('/result.ejs', (req, res) => {
-   const ipAddress = req.body.ipAddress;
-   var regex = /^[0-9.]+$/;
 
+
+app.get('/result', function(req, res) {
+    res.sendFile(__dirname + '/result.ejs');
+})
+
+
+app.post('/result', (req, res) => {
+
+   const ipAddress = req.body.ipAddress; //gets the ip address
+   var regex = /^[0-9.]+$/; //checks the input and only accepts the numbers at the beginning and end with period between
+   
    if (regex.test(ipAddress)) {
+
     const options = {
         path: '/'+ipAddress+'/'+'json/',
         host: 'ipapi.co',
         port: 443,
         headers: { 'User-Agent': 'nodejs-ipapi-v1.02' }
       };
-      
+    
+      //getting the response
       https.get(options, function(response){
           let body = '';
           
@@ -68,7 +75,8 @@ app.post('/result.ejs', (req, res) => {
                     org: 'N/A'
                 });
             }
-            else{ res.render('result', {
+            else { 
+                res.render('result', {
                         ipAddress: ipAddress,
                         version: version,
                         city: city,
@@ -85,23 +93,15 @@ app.post('/result.ejs', (req, res) => {
                     });
                
             }
-        
             });
-        
-
             
       });
-} 
-else {
-  res.sendFile(__dirname + '/error.html');
-}
-    
-
-    
-
+    } 
+    //if it does not pass the regex test, display error page
+    else {
+        res.sendFile(__dirname + '/error.html');
+}     
 })
-
-
 
 
 app.listen(3000, () => console.log('server started at port 3000'));

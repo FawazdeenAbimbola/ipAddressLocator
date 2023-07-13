@@ -1,4 +1,4 @@
-# IP Address Locator Web App
+# IP Address Locator Web App V1.0
 
 A web application that allows users to locate the geographical information of an IP address.
 
@@ -15,7 +15,7 @@ The IP Address Locator Web App is a simple and user-friendly tool that provides 
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js, Express.js, Npm
+- **Backend**: Node.js, Express.js, Npm, EJS
 - **Geolocation API**: You will need to integrate a geolocation API service to fetch the IP address details.
 
 ## Usage
@@ -23,5 +23,5 @@ The IP Address Locator Web App is a simple and user-friendly tool that provides 
 - Click the "Locate" button or press Enter to initiate the lookup process.
 - The app will display the geographical information of the IP address, including the location, longtitude, latitude, service provider, e.t.c.
 
-
+Check it out [IP Address Locator](https://ipaddresslocator.onrender.com/)
 Thank you!
