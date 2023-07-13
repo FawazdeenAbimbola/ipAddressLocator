@@ -10,3 +10,4 @@ document.getElementById('cancel').addEventListener('click', () => {
 document.getElementById("locateBtn").addEventListener("click", () => {
     document.getElementById("ipAddress").focus();
   });
+
